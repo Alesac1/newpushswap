@@ -6,7 +6,7 @@
 /*   By: asacchin <alesacchi1907@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 15:56:16 by asacchin          #+#    #+#             */
-/*   Updated: 2023/05/04 15:56:53 by asacchin         ###   ########.fr       */
+/*   Updated: 2023/05/08 18:01:19 by asacchin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	rra(t_stack *stack, int f)
 	if (f == 1)
 		ft_printf("rra\n");
 	stack->nb_moves++;
+	update_stacks_data(stack);
 }
 
 void	rrb(t_stack *stack, int f)
@@ -46,6 +47,7 @@ void	rrb(t_stack *stack, int f)
 	if (f == 1)
 		ft_printf("rrb\n");
 	stack->nb_moves++;
+	update_stacks_data(stack);
 }
 
 void	rrr(t_stack *stack, int f)
@@ -66,4 +68,5 @@ void	rrr(t_stack *stack, int f)
 	if (f == 1)
 		ft_printf("rrr\n");
 	stack->nb_moves++;
+	update_stacks_data(stack);
 }

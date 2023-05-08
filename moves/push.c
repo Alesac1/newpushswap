@@ -6,7 +6,7 @@
 /*   By: asacchin <alesacchi1907@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 15:53:27 by asacchin          #+#    #+#             */
-/*   Updated: 2023/05/04 15:54:03 by asacchin         ###   ########.fr       */
+/*   Updated: 2023/05/08 18:01:26 by asacchin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	pa(t_stack *stack, int f)
 	if (f == 1)
 		ft_printf("pa\n");
 	stack->nb_moves++;
+	update_stacks_data(stack);
 }
 
 void	pb(t_stack *stack, int f)
@@ -57,4 +58,5 @@ void	pb(t_stack *stack, int f)
 	if (f == 1)
 		ft_printf("pb\n");
 	stack->nb_moves++;
+	update_stacks_data(stack);
 }

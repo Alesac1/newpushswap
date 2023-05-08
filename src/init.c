@@ -6,7 +6,7 @@
 /*   By: asacchin <alesacchi1907@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 13:52:30 by asacchin          #+#    #+#             */
-/*   Updated: 2023/05/04 17:35:45 by asacchin         ###   ########.fr       */
+/*   Updated: 2023/05/08 17:46:13 by asacchin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,12 @@ int	get_input(char **argv)
 
 int	init(t_stack *stack, char *argv[], int f)
 {
-	int	index;
+	int	counter;
 
-	index = get_input(argv);
-	stack->a = malloc(index * sizeof(int));
-	stack->b = malloc(index * sizeof(int));
-	stack->len_a = index;
+	counter = get_input(argv);
+	stack->a = malloc(counter * sizeof(int));
+	stack->b = malloc(counter * sizeof(int));
+	stack->len_a = counter;
 	stack->len_b = 0;
 	stack->max_a = 0;
 	stack->min_a = 0;

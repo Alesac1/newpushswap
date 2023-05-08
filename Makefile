@@ -6,19 +6,21 @@
 #    By: asacchin <alesacchi1907@gmail.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/04 15:12:30 by asacchin          #+#    #+#              #
-#    Updated: 2023/05/04 16:57:29 by asacchin         ###   ########.fr        #
+#    Updated: 2023/05/08 15:53:41 by asacchin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = push_swap.c src/utils.c src/init.c src/sorting.c src/ft_atoi.c moves/push.c moves/reverse_rotate.c moves/rotate.c moves/swap.c \
-		src/check.c
+SRC = push_swap.c src/check.c src/cicle.c src/ft_atoi.c src/init.c src/sorting.c src/stack.c src/utils.c \
+		moves/push.c moves/reverse_rotate.c moves/rotate.c moves/swap.c src/a_data.c \
+		src/b_data.c src/half_a_utils.c src/half_b_utils.c src/half.c \
+
 OBJ = ${SRC:.c=.o}
 NAME = push_swap
 
 # SRC_B =	bonus/checker.c
 # OBJ_B =	${SRC_B:.c=.o}
 # NAME_B = checker
-OUT = ${filter-out srcs/push_swap.o ,${OBJ}}
+OUT = ${filter-out ./push_swap.o ,${OBJ}}
 
 CC = gcc -Wall -Wextra -Werror -g
 FT_PRINTF = include/ft_printf
@@ -26,7 +28,7 @@ LIBFT = include/Libft
 LIBRARY = include/ft_printf/libftprintf.a include/Libft/libft.a
 
 .c.o:
-	@${CC} -c $< -o ${<:.c=.o}
+	@${CC} -c $< -o ${<:.c=.o}      
 
 all	: $(NAME)
 
