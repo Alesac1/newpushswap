@@ -6,7 +6,7 @@
 /*   By: asacchin <alesacchi1907@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 14:17:00 by asacchin          #+#    #+#             */
-/*   Updated: 2023/05/08 19:22:44 by asacchin         ###   ########.fr       */
+/*   Updated: 2023/05/09 21:06:05 by asacchin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@ void	cicle_b(t_stack *stack)
 	stack->total_moves = 0;
 	while (i < stack->len_b)
 	{
-		stack->minor_index_num_a = find_a_minor(stack, i);
+		stack->minor_index_num_a = find_a_major(stack, i);
 		if (stack->minor_index_num_a == -1)
-			stack->minor_index_num_a = find_a_major(stack, i);
+			stack->minor_index_num_a = find_a_minor(stack, i);
 		find_a_spot(stack, i);
 		i++;
 	}
@@ -62,8 +62,8 @@ void	cicle_b(t_stack *stack)
 int	find_a_spot(t_stack *stack, int i)
 {
 	update_stacks_data(stack);
-	if (i < stack->b_half_index
-		&& stack->minor_index_num_a < stack->a_half_index)
+	if (i < stack->b_half_index && stack->minor_index_num_a
+		< stack->a_half_index)
 		upper_half_a(stack, i);
 	else if (i >= stack->b_half_index && stack->minor_index_num_a
 		>= stack->a_half_index)

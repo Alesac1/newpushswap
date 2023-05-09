@@ -6,7 +6,7 @@
 /*   By: asacchin <alesacchi1907@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 12:35:58 by asacchin          #+#    #+#             */
-/*   Updated: 2023/05/08 19:42:02 by asacchin         ###   ########.fr       */
+/*   Updated: 2023/05/09 21:15:11 by asacchin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ void	lower_half_utils_b(t_stack *stack, int i, int temp_moves);
 void	different_half_utils_b(t_stack *stack, int i, int temp_moves);
 void	upper_half_a_utils(t_stack *stack, int i, int temp_moves);
 void	lower_half_a_utils(t_stack *stack, int i, int temp_moves);
-void	different_half_utils_a(t_stack *stack, int i, int temp_moves);
+void	different_half_a_utils(t_stack *stack, int i, int temp_moves);
 t_stack	*multiple_input(t_stack *stack, char **tmp);
 
 #endif

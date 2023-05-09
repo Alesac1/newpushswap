@@ -6,7 +6,7 @@
 /*   By: asacchin <alesacchi1907@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 15:04:00 by asacchin          #+#    #+#             */
-/*   Updated: 2023/05/08 19:00:46 by asacchin         ###   ########.fr       */
+/*   Updated: 2023/05/09 21:05:00 by asacchin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int	find_a_major(t_stack *stack, int i)
 	{
 		if (stack->a[j] > stack->b[i]
 			&& (major_index == -1
-				|| stack->a[j] > stack->a[major_index]))
+				|| stack->a[j] < stack->a[major_index]))
 				major_index = j;
 		j++;
 	}
@@ -100,8 +100,8 @@ int	find_a_minor(t_stack *stack, int i)
 	{
 		if (stack->a[j] < stack->b[i]
 			&& (minor_index == -1
-				|| stack->a[j] > stack->a[minor_index]))
-					minor_index = j;
+				|| stack->a[j] < stack->a[minor_index]))
+				minor_index = j;
 		j++;
 	}
 	return (minor_index);

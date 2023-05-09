@@ -6,7 +6,7 @@
 /*   By: asacchin <alesacchi1907@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 15:27:25 by asacchin          #+#    #+#             */
-/*   Updated: 2023/05/08 19:29:30 by asacchin         ###   ########.fr       */
+/*   Updated: 2023/05/09 21:14:11 by asacchin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,5 +99,5 @@ void	different_half_a(t_stack *stack, int i)
 		< stack->a_half_index)
 		temp_moves = stack->minor_index_num_a + (stack->len_b - i);
 	if ((temp_moves < stack->total_moves) || (i == 0))
-		different_half_utils_a(stack, i, temp_moves);
+		different_half_a_utils(stack, i, temp_moves);
 }

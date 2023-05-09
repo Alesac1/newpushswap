@@ -6,7 +6,7 @@
 /*   By: asacchin <alesacchi1907@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 15:56:16 by asacchin          #+#    #+#             */
-/*   Updated: 2023/05/08 18:01:19 by asacchin         ###   ########.fr       */
+/*   Updated: 2023/05/09 18:27:44 by asacchin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,59 +14,50 @@
 
 void	rra(t_stack *stack, int f)
 {
-	int	tmp;
-	int	len;
+	int	i;
+	int	temp;
 
-	tmp = stack->a[stack->len_a - 1];
-	len = stack->len_a;
-	while (len > 0)
+	i = stack->len_a - 1;
+	temp = 0;
+	while (i > 0)
 	{
-		stack->a[len] = stack->a[len - 1];
-		len--;
+		temp = stack->a[i - 1];
+		stack->a[i - 1] = stack->a[i];
+		stack->a[i] = temp;
+		i --;
 	}
-	stack->a[0] = tmp;
 	if (f == 1)
 		ft_printf("rra\n");
-	stack->nb_moves++;
+	stack->total_moves++;
 	update_stacks_data(stack);
 }
 
 void	rrb(t_stack *stack, int f)
 {
-	int	tmp;
-	int	len;
+	int	i;
+	int	temp;
 
-	tmp = stack->b[stack->len_b - 1];
-	len = stack->len_b;
-	while (len > 0)
+	i = stack->len_b - 1;
+	temp = 0;
+	while (i > 0)
 	{
-		stack->b[len] = stack->b[len - 1];
-		len--;
+		temp = stack->b[i - 1];
+		stack->b[i - 1] = stack->b[i];
+		stack->b[i] = temp;
+		i --;
 	}
-	stack->b[0] = tmp;
 	if (f == 1)
 		ft_printf("rrb\n");
-	stack->nb_moves++;
+	stack->total_moves++;
 	update_stacks_data(stack);
 }
 
 void	rrr(t_stack *stack, int f)
 {
-	int	tmp;
-	int	len;
-
-	tmp = stack->a[stack->len_a - 1];
-	len = stack->len_a;
-	while (len-- > 0)
-		stack->a[len] = stack->a[len - 1];
-	stack->a[0] = tmp;
-	tmp = stack->b[stack->len_b - 1];
-	len = stack->len_b;
-	while (len-- > 0)
-		stack->b[len] = stack->b[len - 1];
-	stack->b[0] = tmp;
+	rra(stack, 0);
+	rrb(stack, 0);
 	if (f == 1)
 		ft_printf("rrr\n");
-	stack->nb_moves++;
+	stack->total_moves--;
 	update_stacks_data(stack);
 }
