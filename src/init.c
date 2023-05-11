@@ -6,7 +6,7 @@
 /*   By: asacchin <alesacchi1907@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 13:52:30 by asacchin          #+#    #+#             */
-/*   Updated: 2023/05/08 17:46:13 by asacchin         ###   ########.fr       */
+/*   Updated: 2023/05/11 18:11:04 by asacchin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,11 @@ int	init(t_stack *stack, char *argv[], int f)
 	writestack(stack, argv);
 	check_dup(stack);
 	init_moves(stack);
+	if (!checkseq(stack))
+	{
+		free_data(stack);
+		exit(0);
+	}
 	smallsort(stack, f);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: asacchin <alesacchi1907@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 15:36:42 by asacchin          #+#    #+#             */
-/*   Updated: 2023/05/08 17:09:33 by asacchin         ###   ########.fr       */
+/*   Updated: 2023/05/11 17:59:48 by asacchin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	smallsort(t_stack *stack, int f)
 	{
 		if (!(check_a_input(stack)))
 		{
-			if (stack->len_a == 2 && !checkseq(stack))
+			if (stack->len_a == 2 && checkseq(stack))
 			{
 				sa(stack, 1);
 				exit(0);
